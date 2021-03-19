@@ -1,0 +1,14 @@
+<section class="paging">
+  <button mat-stroked-button class="paging__previous button" (click)="previous()">◀️ Previous</button>
+  <button mat-stroked-button class="paging__next button" (click)="next()">Next ▶️</button>
+</section>
+<section class="discover_list" *ngIf="movies">
+  <div class="discover_list__movie" *ngFor="let movie of movies">
+    <a [routerLink]="['/details', movie.id]">
+      <div>
+        <div><img class="discover_list__img" [src]="movie.poster_path" alt=""></div>
+        <h2>{{ movie.original_title }} ({{ movie.release_date }})</h2>
+      </div>
+    </a>
+  </div>
+</section>

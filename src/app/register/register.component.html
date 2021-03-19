@@ -1,0 +1,35 @@
+<div class="register">
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="register_form">
+        <mat-form-field class="register_form__field" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field class="register_form__field" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+          <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <mat-form-field class="register_form__field" appearance="fill">
+          <mat-label>Password, again</mat-label>
+          <input matInput [type]="hide2 ? 'password' : 'text'" [formControl]="password2" required>
+          <mat-error *ngIf="password2.invalid">{{getPassword2ErrorMessage()}}</mat-error>
+          <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-stroked-button color="accent" class="btn-block" (click)="register()">Register</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

@@ -1,0 +1,26 @@
+.discover_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-auto-rows: minmax(160px, auto);
+  grid-gap: 1em;
+}
+
+.discover_list__movie {
+  overflow: hidden;
+  padding: 1em;
+  text-align: center;
+}
+
+.discover_list__img {
+  background: #aaa;
+  height: 450px;
+  width: 300px;
+}
+
+.paging {
+  text-align: center;
+}
+
+.paging__previous {
+  margin-right: 1em;
+}

@@ -1,27 +1,61 @@
-# FilmDbApp
+# Film DB App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+With this app you can search movies and their details.
+Using The Movie DB API: https://developers.themoviedb.org/3
 
-## Development server
+## Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Open file: `src/app/environments/environment.ts`.
+2. Set your API key, for example: `apiKey: "api_key=11111111111111111111111111111111"`
+3. Install: `npm install`
+4. Run: `ng serve`
+5. Open default address in your browser: `http://localhost:4200/`
 
-## Code scaffolding
+Tested with Node.js v14.15.0 on Windows 10 Home. Made with Angular v11.2.4.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This app uses localStorage for registration, login and current user session.
 
-## Build
+Known bugs:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- Discover page uses descending dates but they are off somehow.
+- Some movies don't have poster image.
 
-## Running unit tests
+First version made in March 19th, 2021.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Login
 
-## Running end-to-end tests
+The user can log in here or move on to create an account.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Alt text](doc_img/01_login.png "Login")
 
-## Further help
+## Register
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The user can create an account here.
+
+![Alt text](doc_img/02_register.png "Register")
+
+## Watchlist
+
+This page is work in progress, at the moment it only shows who logged in.
+
+![Alt text](doc_img/03_watchlist.png "Watchlist")
+
+## Discover
+
+Discover lists the films by descending date, but somehow the API dates are off at some places.
+
+Also not every movie has a poster image.
+
+![Alt text](doc_img/04_discover.png "Discover")
+
+## Details
+
+When you click on a movie in the Discover, you can watch the details of it.
+
+![Alt text](doc_img/05_details.png "Details")
+
+## About
+
+This is a simple description, just to show how it would look to have such a page.
+
+![Alt text](doc_img/06_about.png "About")

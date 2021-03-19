@@ -1,0 +1,36 @@
+<button mat-stroked-button class="back_to_discover button" routerLink="/discover">◀️ Back to Discover</button>
+<section *ngIf="(movie | async) as movie">
+  <div class="details_intro_group">
+    <img *ngIf="poster" class="details_intro_img" [src]="poster" alt="">
+    <div class="details_intro_data">
+      <h2>{{ movie.title }} ({{ release_year }})</h2>
+      <div class="facts">{{ genres_string }} {{ movie.runtime }} mins</div>
+      <div class="score">{{ user_score }}% user score</div>
+      <h3>{{ movie.tagline }}</h3>
+
+      <hr>
+
+      <h3>Overview</h3>
+      <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div *ngIf="(movieCredits | async) as movieCredits">
+    <h2>Cast</h2>
+    <ul>
+      <li *ngFor="let cast of movieCredits.cast">{{ cast.name }} (character {{ cast.character }})</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div *ngIf="(movieReviews | async) as movieReviews">
+    <h2>Reviews</h2>
+    <div *ngFor="let result of movieReviews.results">
+      <h3>{{ result.author }} {{ result.created_at }}</h3>
+      <p>{{ result.content }}</p>
+    </div>
+  </div>
+</section>

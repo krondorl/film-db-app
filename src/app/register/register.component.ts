@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { SuccessDialogComponent } from '../layout/dialog/success-dialog/success-dialog.component';
 import { Router } from '@angular/router';
@@ -13,9 +13,9 @@ import { UserService } from '../_services/user.service';
 export class RegisterComponent implements OnInit {
   hide: boolean = true;
   hide2: boolean = true;
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required, Validators.minLength(10)]);
-  password2 = new FormControl('', [Validators.required, Validators.minLength(10)]);
+  email = new UntypedFormControl('', [Validators.required, Validators.email]);
+  password = new UntypedFormControl('', [Validators.required, Validators.minLength(10)]);
+  password2 = new UntypedFormControl('', [Validators.required, Validators.minLength(10)]);
 
   constructor(public dialog: MatDialog,
     private router: Router, private userService: UserService) { }

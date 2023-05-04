@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { SuccessDialogComponent } from '../layout/dialog/success-dialog/success-dialog.component';
 import { Router } from '@angular/router';
 import { UserService } from '../_services/user.service';

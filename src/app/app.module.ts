@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { DiscoverComponent } from './discover/discover.component';
 import { DetailsComponent } from './details/details.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NavComponent } from './layout/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,38 +26,31 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    DiscoverComponent,
-    DetailsComponent,
-    NavComponent,
-    AboutComponent,
-    LoginComponent,
-    RegisterComponent,
-    SuccessDialogComponent,
-    WatchlistComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NoopAnimationsModule,
-    HttpClientModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDialogModule,
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        DiscoverComponent,
+        DetailsComponent,
+        NavComponent,
+        AboutComponent,
+        LoginComponent,
+        RegisterComponent,
+        SuccessDialogComponent,
+        WatchlistComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        NoopAnimationsModule,
+        LayoutModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDialogModule,
+        MatCardModule,
+        FormsModule,
+        ReactiveFormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
